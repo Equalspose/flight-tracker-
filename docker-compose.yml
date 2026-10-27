@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: flight-tracker-db
+    environment:
+      POSTGRES_DB: flight_tracker
+      POSTGRES_USER: flight
+      POSTGRES_PASSWORD: flight
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
